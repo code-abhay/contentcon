@@ -27,7 +27,7 @@ let lastUpdateTimes = new Map();
 
 // Auto-refresh settings
 const AUTO_REFRESH_ENABLED = true;
-const REFRESH_INTERVAL = 10000; // 10 seconds (reduced for faster sync)
+const REFRESH_INTERVAL = 5000; // 5 seconds (faster sync for better responsiveness)
 
 /**
  * Make API request to Contentstack
@@ -154,40 +154,49 @@ window.checkForUpdates = async function() {
       return false;
     }
     
-    // Use _version (most reliable) or updated_at timestamp to detect changes
-    const currentVersion = hero._version || hero.updated_at || (hero.title + hero.subtitle);
-    const lastVersion = lastUpdateTimes.get('hero_section');
-    
-    console.log('📊 Hero data:', { 
-      title: hero.title, 
-      version: hero._version, 
-      updated: hero.updated_at 
+    // Use publish_details.time as most reliable indicator of published changes
+    // Also check _version and updated_at as fallbacks
+    const publishTime = hero.publish_details?.time || hero.updated_at || hero._version;
+    const contentHash = JSON.stringify({
+      title: hero.title,
+      subtitle: hero.subtitle,
+      gradient_title: hero.gradient_title,
+      time: publishTime
     });
-    console.log('📊 Current version:', currentVersion);
-    console.log('📊 Last known version:', lastVersion);
     
-    if (lastVersion && lastVersion !== currentVersion) {
+    const lastHash = lastUpdateTimes.get('hero_section');
+    
+    console.log('📊 Hero update check:', { 
+      title: hero.title,
+      publishTime: publishTime,
+      currentHash: contentHash.substring(0, 50) + '...'
+    });
+    
+    if (lastHash && lastHash !== contentHash) {
       console.log('🔄 ✅ Content updated in Contentstack! Changes detected!');
+      console.log('🔄 Previous:', lastHash.substring(0, 50) + '...');
+      console.log('🔄 Current:', contentHash.substring(0, 50) + '...');
       console.log('🔄 Clearing cache and refreshing page...');
       
       // Clear all cache
       contentCache.clear();
+      lastUpdateTimes.clear();
       
-      // Update version
-      lastUpdateTimes.set('hero_section', currentVersion);
+      // Update hash
+      lastUpdateTimes.set('hero_section', contentHash);
       
       // Small delay then reload to show new content
       setTimeout(() => {
         window.location.reload();
-      }, 500);
+      }, 1000);
       
       return true;
-    } else if (!lastVersion) {
-      // First time - store current version
-      lastUpdateTimes.set('hero_section', currentVersion);
-      console.log('💾 Stored initial version');
+    } else if (!lastHash) {
+      // First time - store current hash
+      lastUpdateTimes.set('hero_section', contentHash);
+      console.log('💾 Stored initial content hash');
     } else {
-      console.log('✅ No changes detected');
+      console.log('✅ No changes detected - content is up to date');
     }
   } catch (error) {
     console.error('❌ Error checking for updates:', error);

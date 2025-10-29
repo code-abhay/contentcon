@@ -282,9 +282,20 @@ window.renderAllContent = async function(forceRefresh = false) {
 };
 
 // Auto-render when DOM is ready
+// Also re-check periodically to ensure content is always fresh
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', window.renderAllContent);
+  document.addEventListener('DOMContentLoaded', () => {
+    window.renderAllContent();
+    // Re-render every 15 seconds to catch any missed updates
+    setInterval(() => {
+      window.renderAllContent(true); // Force refresh
+    }, 15000);
+  });
 } else {
   window.renderAllContent();
+  // Re-render every 15 seconds to catch any missed updates
+  setInterval(() => {
+    window.renderAllContent(true); // Force refresh
+  }, 15000);
 }
 
