@@ -4,6 +4,7 @@
   "description": "ContentCon Blog - Modern content management website with Contentstack integration",
   "main": "index.html",
   "scripts": {
+    "build": "echo 'Static site - no build required'",
     "start": "python3 -m http.server 8000",
     "serve": "python3 -m http.server 8000"
   },
