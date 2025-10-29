@@ -33,17 +33,37 @@ window.renderHeroSection = async function() {
     const heroContent = document.querySelector('.hero-content');
     
     if (heroContent && hero) {
-      const title = hero.title || '';
+      let title = hero.title || '';
       const gradientTitle = hero.gradient_title || '';
       const subtitle = hero.subtitle || '';
+      
+      // If gradient_title is provided and exists in title, extract it
+      // Otherwise use title as-is and append gradient_title
+      let titlePart1 = title;
+      let titlePart2 = '';
+      
+      if (gradientTitle) {
+        // Check if gradientTitle is already part of the title
+        const titleLower = title.toLowerCase();
+        const gradientLower = gradientTitle.toLowerCase();
+        
+        if (titleLower.includes(gradientLower)) {
+          // Extract the part before gradient text
+          const index = titleLower.indexOf(gradientLower);
+          titlePart1 = title.substring(0, index).trim();
+          titlePart2 = gradientTitle;
+        } else {
+          // Gradient text is separate, use title as-is and append gradient
+          titlePart2 = gradientTitle;
+        }
+      }
       
       const primaryCTA = hero.primary_cta || {};
       const secondaryCTA = hero.secondary_cta || {};
       
       const heroHTML = `
         <h1 class="hero-title fade-in-up">
-          ${title}<br>
-          ${gradientTitle ? `<span class="gradient-text">${gradientTitle}</span>` : ''}
+          ${titlePart1}${titlePart2 ? '<br><span class="gradient-text">' + titlePart2 + '</span>' : ''}
         </h1>
         <p class="hero-subtitle fade-in-up delay-1">${subtitle}</p>
         <div class="hero-actions fade-in-up delay-2">
