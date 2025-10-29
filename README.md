@@ -2,6 +2,15 @@
 
 Modern content management blog with Contentstack CMS integration and live content sync.
 
+## Files
+
+- `index.html` - Main website page
+- `styles.css` - All CSS styles and animations
+- `script.js` - UI interactions and animations
+- `contentstack-sync-browser.js` - Contentstack API integration and live sync
+- `contentstack-render-browser.js` - Dynamic content rendering
+- `package.json` - Project configuration
+
 ## Features
 
 - ✅ Full Contentstack CMS integration
@@ -11,9 +20,4 @@ Modern content management blog with Contentstack CMS integration and live conten
 
 ## Deployment
 
-This project is ready for deployment on Contentstack Launch.
-
-## Contentstack Configuration
-
-Credentials are configured in `contentstack-sync-browser.js`.
-
+Ready for deployment on Contentstack Launch. Connect this repository to Launch and deploy!
