@@ -44,8 +44,9 @@ async function fetchFromContentstack(contentType, query = {}, skipCache = false)
   
   try {
     // Contentstack Delivery API format
-    // Format: /v3/content_types/{content_type_uid}/entries?access_token={token}&environment={env}
-    let url = `${API_BASE}/content_types/${contentType}/entries?access_token=${CONTENTSTACK_CONFIG.delivery_token}&environment=${CONTENTSTACK_CONFIG.environment}`;
+    // Requires both api_key and access_token in URL
+    // Format: /v3/content_types/{content_type_uid}/entries?api_key={key}&access_token={token}&environment={env}
+    let url = `${API_BASE}/content_types/${contentType}/entries?api_key=${CONTENTSTACK_CONFIG.api_key}&access_token=${CONTENTSTACK_CONFIG.delivery_token}&environment=${CONTENTSTACK_CONFIG.environment}`;
     
     // Add query parameters
     if (query.limit) url += `&limit=${query.limit}`;
@@ -58,7 +59,7 @@ async function fetchFromContentstack(contentType, query = {}, skipCache = false)
     
     console.log(`📡 Fetching ${contentType} from Contentstack...`);
     
-    // Make request (Contentstack API key and token are in URL)
+    // Make request with both api_key and access_token
     const response = await fetch(url);
     
     if (!response.ok) {
