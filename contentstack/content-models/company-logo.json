@@ -1,0 +1,79 @@
+{
+  "title": "Company Logo",
+  "uid": "company_logo",
+  "schema": [
+    {
+      "data_type": "text",
+      "display_name": "Company Name",
+      "uid": "company_name",
+      "field_metadata": {
+        "_default": true,
+        "placeholder": "Company Name",
+        "version": 3
+      },
+      "mandatory": true,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "file",
+      "display_name": "Company Logo",
+      "uid": "logo",
+      "field_metadata": {
+        "description": "Company logo image",
+        "rich_text_type": "standard",
+        "image": true
+      },
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false,
+      "dimension": {
+        "width": { "min": null, "max": null },
+        "height": { "min": null, "max": null }
+      }
+    },
+    {
+      "data_type": "link",
+      "display_name": "Website URL",
+      "uid": "website_url",
+      "field_metadata": {
+        "description": "Company website URL"
+      },
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "number",
+      "display_name": "Display Order",
+      "uid": "order",
+      "field_metadata": {
+        "description": "Order in which logo appears",
+        "default_value": 0
+      },
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    }
+  ],
+  "description": "Company logos for trusted partners section",
+  "options": {
+    "singleton": false,
+    "title": "company_name",
+    "publishable": true,
+    "sub_title": []
+  },
+  "abilities": {
+    "get_one_object": true,
+    "get_all_objects": true,
+    "create_object": true,
+    "update_object": true,
+    "delete_object": true,
+    "delete_all_objects": true
+  },
+  "maintain_revisions": true
+}

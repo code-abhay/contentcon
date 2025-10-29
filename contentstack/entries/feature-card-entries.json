@@ -1,0 +1,97 @@
+{
+  "entries": [
+    {
+      "entry": {
+        "uid": "feature_headless_cms",
+        "content_type": "feature_card",
+        "title": "Headless CMS",
+        "locale": "en-us",
+        "data": {
+          "title": "Headless CMS",
+          "description": "Maintain complete control of your technology with an API-first, cloud-based headless CMS.",
+          "icon_name": "cms",
+          "link_text": "Learn more",
+          "link_url": "/features/headless-cms",
+          "order": 1
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "entry": {
+        "uid": "feature_personalization",
+        "content_type": "feature_card",
+        "title": "Personalization",
+        "locale": "en-us",
+        "data": {
+          "title": "Personalization",
+          "description": "Leverage data and automation so you're delivering the right message at the right time.",
+          "icon_name": "personalization",
+          "link_text": "Learn more",
+          "link_url": "/features/personalization",
+          "order": 2
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "entry": {
+        "uid": "feature_analytics",
+        "content_type": "feature_card",
+        "title": "Real-time Analytics",
+        "locale": "en-us",
+        "data": {
+          "title": "Real-time Analytics",
+          "description": "All of your customer data, unified and ready for action, across every channel and audience.",
+          "icon_name": "analytics",
+          "link_text": "Learn more",
+          "link_url": "/features/analytics",
+          "order": 3
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "entry": {
+        "uid": "feature_hosting",
+        "content_type": "feature_card",
+        "title": "Front-end Hosting",
+        "locale": "en-us",
+        "data": {
+          "title": "Front-end Hosting",
+          "description": "Fully integrated. Fully automated. MACH-compliant. This is front-end hosting that works for you.",
+          "icon_name": "hosting",
+          "link_text": "Learn more",
+          "link_url": "/features/hosting",
+          "order": 4
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    }
+  ]
+}
+

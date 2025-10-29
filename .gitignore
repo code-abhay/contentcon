@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Build files (if using any build process)
+dist/
+build/
+
+# Contentstack config (keep public since it's needed for Launch)
+# contentstack-config.js
+
+# Test files
+test-contentstack-api.html
+

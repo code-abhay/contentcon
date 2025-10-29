@@ -1,0 +1,28 @@
+# Essential Files for GitHub/Launch Deployment
+
+## Core Files (REQUIRED)
+- index.html
+- styles.css
+- script.js
+- contentstack-sync-browser.js
+- contentstack-render-browser.js
+
+## Configuration (REQUIRED)
+- package.json
+- .gitignore
+- .nvmrc
+
+## Documentation (RECOMMENDED)
+- README.md
+- LAUNCH_SETUP.md
+- DEPLOYMENT_CHECKLIST.md
+- GIT_PUSH_INSTRUCTIONS.md
+- SYNC_TROUBLESHOOTING.md
+- CONTENTSTACK_SYNC_GUIDE.md
+
+## Optional (Can exclude)
+- contentstack/ (reference only - not needed for Launch)
+- contentstack-sync.js (unused - browser version is used)
+- contentstack-render.js (unused - browser version is used)
+- contentstack-config.js (unused - config is in sync file)
+- logs/ (auto-generated)

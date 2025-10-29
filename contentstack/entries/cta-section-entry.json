@@ -1,0 +1,22 @@
+{
+  "entry": {
+    "uid": "cta_main",
+    "content_type": "cta_section",
+    "title": "Reimagine possible",
+    "locale": "en-us",
+    "data": {
+      "title": "Reimagine possible",
+      "description": "Because with ContentCon, it is possible. And we'll help you get there.",
+      "button_text": "Request a Demo",
+      "button_link": "/request-demo"
+    },
+    "publish_details": [
+      {
+        "environment": "production",
+        "locale": "en-us",
+        "time": "2025-01-01T00:00:00.000Z"
+      }
+    ]
+  }
+}
+

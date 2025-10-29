@@ -1,0 +1,105 @@
+{
+  "entries": [
+    {
+      "entry": {
+        "uid": "nav_platform",
+        "content_type": "navigation_menu",
+        "title": "Platform",
+        "locale": "en-us",
+        "data": {
+          "menu_label": "Platform",
+          "link_url": "#platform",
+          "order": 1
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "entry": {
+        "uid": "nav_solutions",
+        "content_type": "navigation_menu",
+        "title": "Solutions",
+        "locale": "en-us",
+        "data": {
+          "menu_label": "Solutions",
+          "link_url": "#solutions",
+          "order": 2
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "entry": {
+        "uid": "nav_resources",
+        "content_type": "navigation_menu",
+        "title": "Resources",
+        "locale": "en-us",
+        "data": {
+          "menu_label": "Resources",
+          "link_url": "#resources",
+          "order": 3
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "entry": {
+        "uid": "nav_blog",
+        "content_type": "navigation_menu",
+        "title": "Blog",
+        "locale": "en-us",
+        "data": {
+          "menu_label": "Blog",
+          "link_url": "#blog",
+          "order": 4
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "entry": {
+        "uid": "nav_about",
+        "content_type": "navigation_menu",
+        "title": "About",
+        "locale": "en-us",
+        "data": {
+          "menu_label": "About",
+          "link_url": "#about",
+          "order": 5
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    }
+  ]
+}
+

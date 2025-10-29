@@ -1,0 +1,79 @@
+{
+  "title": "CTA Section",
+  "uid": "cta_section",
+  "schema": [
+    {
+      "data_type": "text",
+      "display_name": "Title",
+      "uid": "title",
+      "field_metadata": {
+        "_default": true,
+        "placeholder": "CTA section title",
+        "version": 3
+      },
+      "mandatory": true,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Description",
+      "uid": "description",
+      "field_metadata": {
+        "description": "CTA section description",
+        "multiline": true,
+        "placeholder": "CTA description",
+        "version": 3
+      },
+      "mandatory": true,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Button Text",
+      "uid": "button_text",
+      "field_metadata": {
+        "description": "CTA button text",
+        "placeholder": "Button Text",
+        "version": 3
+      },
+      "mandatory": true,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Button Link",
+      "uid": "button_link",
+      "field_metadata": {
+        "description": "CTA button URL",
+        "placeholder": "/link-url",
+        "version": 3
+      },
+      "mandatory": true,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    }
+  ],
+  "description": "Call-to-action section",
+  "options": {
+    "singleton": true,
+    "title": "title",
+    "publishable": true,
+    "sub_title": []
+  },
+  "abilities": {
+    "get_one_object": true,
+    "get_all_objects": true,
+    "create_object": true,
+    "update_object": true,
+    "delete_object": true,
+    "delete_all_objects": true
+  },
+  "maintain_revisions": true
+}

@@ -1,0 +1,153 @@
+{
+  "entries": [
+    {
+      "entry": {
+        "uid": "footer_platform",
+        "content_type": "footer_section",
+        "title": "Platform",
+        "locale": "en-us",
+        "data": {
+          "section_title": "Platform",
+          "links": [
+            {
+              "link_text": "Solution Center",
+              "link_url": "/solutions"
+            },
+            {
+              "link_text": "Marketplace",
+              "link_url": "/marketplace"
+            },
+            {
+              "link_text": "Developers & IT",
+              "link_url": "/developers"
+            },
+            {
+              "link_text": "Plans & Pricing",
+              "link_url": "/pricing"
+            }
+          ],
+          "order": 1
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "entry": {
+        "uid": "footer_solutions",
+        "content_type": "footer_section",
+        "title": "Solutions",
+        "locale": "en-us",
+        "data": {
+          "section_title": "Solutions",
+          "links": [
+            {
+              "link_text": "Retail",
+              "link_url": "/solutions/retail"
+            },
+            {
+              "link_text": "E-commerce",
+              "link_url": "/solutions/ecommerce"
+            },
+            {
+              "link_text": "Financial Services",
+              "link_url": "/solutions/financial-services"
+            },
+            {
+              "link_text": "Personalization",
+              "link_url": "/solutions/personalization"
+            }
+          ],
+          "order": 2
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "entry": {
+        "uid": "footer_resources",
+        "content_type": "footer_section",
+        "title": "Resources",
+        "locale": "en-us",
+        "data": {
+          "section_title": "Resources",
+          "links": [
+            {
+              "link_text": "Academy",
+              "link_url": "/academy"
+            },
+            {
+              "link_text": "Documentation",
+              "link_url": "/docs"
+            },
+            {
+              "link_text": "Blog",
+              "link_url": "/blog"
+            },
+            {
+              "link_text": "Community",
+              "link_url": "/community"
+            }
+          ],
+          "order": 3
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "entry": {
+        "uid": "footer_company",
+        "content_type": "footer_section",
+        "title": "Company",
+        "locale": "en-us",
+        "data": {
+          "section_title": "Company",
+          "links": [
+            {
+              "link_text": "About Us",
+              "link_url": "/about"
+            },
+            {
+              "link_text": "Careers",
+              "link_url": "/careers"
+            },
+            {
+              "link_text": "Contact",
+              "link_url": "/contact"
+            },
+            {
+              "link_text": "Support",
+              "link_url": "/support"
+            }
+          ],
+          "order": 4
+        },
+        "publish_details": [
+          {
+            "environment": "production",
+            "locale": "en-us",
+            "time": "2025-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,106 @@
+{
+  "title": "Feature Card",
+  "uid": "feature_card",
+  "schema": [
+    {
+      "data_type": "text",
+      "display_name": "Title",
+      "uid": "title",
+      "field_metadata": {
+        "_default": true,
+        "placeholder": "Feature title",
+        "version": 3
+      },
+      "mandatory": true,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Description",
+      "uid": "description",
+      "field_metadata": {
+        "description": "Feature description",
+        "multiline": true,
+        "placeholder": "Feature description",
+        "version": 3
+      },
+      "mandatory": true,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Icon Name",
+      "uid": "icon_name",
+      "field_metadata": {
+        "description": "Name of the icon (e.g., 'cms', 'personalization', 'analytics', 'hosting')",
+        "placeholder": "icon-name",
+        "version": 3
+      },
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Link Text",
+      "uid": "link_text",
+      "field_metadata": {
+        "description": "Text for the learn more link",
+        "placeholder": "Learn more",
+        "version": 3
+      },
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Link URL",
+      "uid": "link_url",
+      "field_metadata": {
+        "description": "URL for the learn more link",
+        "placeholder": "/link-url",
+        "version": 3
+      },
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "number",
+      "display_name": "Display Order",
+      "uid": "order",
+      "field_metadata": {
+        "description": "Order in which feature appears",
+        "default_value": 0
+      },
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    }
+  ],
+  "description": "Feature cards for the platform/features section",
+  "options": {
+    "singleton": false,
+    "title": "title",
+    "publishable": true,
+    "sub_title": []
+  },
+  "abilities": {
+    "get_one_object": true,
+    "get_all_objects": true,
+    "create_object": true,
+    "update_object": true,
+    "delete_object": true,
+    "delete_all_objects": true
+  },
+  "maintain_revisions": true
+}
