@@ -33,3 +33,4 @@ build/
 # Test files
 test-contentstack-api.html
 
+.git-credentials
