@@ -26,6 +26,14 @@
       const clientWidth = grid.clientWidth;
       const maxScroll = scrollWidth - clientWidth;
 
+      console.log('🔍 Carousel state:', {
+        scrollLeft,
+        scrollWidth,
+        clientWidth,
+        maxScroll,
+        cardsCount: grid.querySelectorAll('.feature-card').length
+      });
+
       // Disable prev button if at start
       if (scrollLeft <= 10) {
         prevBtn.disabled = true;
@@ -36,7 +44,8 @@
       }
 
       // Disable next button if at end
-      if (scrollLeft >= maxScroll - 10) {
+      // Only disable if there's actually more content to scroll
+      if (maxScroll <= 10 || scrollLeft >= maxScroll - 10) {
         nextBtn.disabled = true;
         nextBtn.setAttribute('aria-disabled', 'true');
       } else {

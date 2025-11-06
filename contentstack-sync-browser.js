@@ -49,7 +49,14 @@ async function fetchFromContentstack(contentType, query = {}, skipCache = false)
     let url = `${API_BASE}/content_types/${contentType}/entries?api_key=${CONTENTSTACK_CONFIG.api_key}&access_token=${CONTENTSTACK_CONFIG.delivery_token}&environment=${CONTENTSTACK_CONFIG.environment}`;
     
     // Add query parameters
-    if (query.limit) url += `&limit=${query.limit}`;
+    // Note: Contentstack defaults to 100 entries max per request
+    // If you need more, you'll need to paginate with skip/limit
+    if (query.limit) {
+      url += `&limit=${query.limit}`;
+    } else {
+      // Set a high limit to get all entries (Contentstack max is typically 100)
+      url += `&limit=100`;
+    }
     if (query.skip) url += `&skip=${query.skip}`;
     
     // Handle ordering properly (Contentstack uses specific query format)

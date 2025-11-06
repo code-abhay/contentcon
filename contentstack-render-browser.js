@@ -130,7 +130,10 @@ window.renderFeatureCards = async function() {
     const features = await window.getFeatureCards();
     const featuresGrid = document.getElementById('features-grid') || document.querySelector('.features-grid');
     
-    if (featuresGrid && features && features.length > 0) {
+    console.log('🎨 Rendering feature cards:', features?.length || 0, 'cards found');
+    
+    if (featuresGrid) {
+      if (features && features.length > 0) {
       const iconMap = {
         'cms': '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>',
         'personalization': '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
@@ -170,9 +173,16 @@ window.renderFeatureCards = async function() {
           window.initCarousel();
         }, 100);
       }
+      } else {
+        console.warn('⚠️ No feature cards found in Contentstack');
+        featuresGrid.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 40px;">No feature cards available</p>';
+      }
+    } else {
+      console.error('❌ Features grid element not found in DOM');
     }
   } catch (error) {
-    console.error('Error rendering feature cards:', error);
+    console.error('❌ Error rendering feature cards:', error);
+    console.error('Stack trace:', error.stack);
   }
 };
 
