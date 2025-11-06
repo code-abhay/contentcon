@@ -128,7 +128,7 @@ window.renderCompanyLogos = async function() {
 window.renderFeatureCards = async function() {
   try {
     const features = await window.getFeatureCards();
-    const featuresGrid = document.querySelector('.features-grid');
+    const featuresGrid = document.getElementById('features-grid') || document.querySelector('.features-grid');
     
     if (featuresGrid && features && features.length > 0) {
       const iconMap = {
