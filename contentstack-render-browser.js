@@ -163,6 +163,13 @@ window.renderFeatureCards = async function() {
         `;
       }).join('');
       featuresGrid.innerHTML = featuresHTML;
+      
+      // Re-initialize carousel after content is rendered
+      if (window.initCarousel) {
+        setTimeout(() => {
+          window.initCarousel();
+        }, 100);
+      }
     }
   } catch (error) {
     console.error('Error rendering feature cards:', error);

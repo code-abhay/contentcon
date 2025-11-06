@@ -79,56 +79,18 @@
                 </p>
             </div>
             
-            <div class="features-grid">
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                    </div>
-                    <h3>Headless CMS</h3>
-                    <p>Maintain complete control of your technology with an API-first, cloud-based headless CMS.</p>
-                    <a href="#" class="feature-link">Learn more →</a>
-                </div>
-                
-                <div class="feature-card fade-in-up delay-1">
-                    <div class="feature-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                    <h3>Personalization</h3>
-                    <p>Leverage data and automation so you're delivering the right message at the right time.</p>
-                    <a href="#" class="feature-link">Learn more →</a>
-                </div>
-                
-                <div class="feature-card fade-in-up delay-2">
-                    <div class="feature-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="22" y1="12" x2="2" y2="12"></line>
-                            <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
-                        </svg>
-                    </div>
-                    <h3>Real-time Analytics</h3>
-                    <p>All of your customer data, unified and ready for action, across every channel and audience.</p>
-                    <a href="#" class="feature-link">Learn more →</a>
-                </div>
-                
-                <div class="feature-card fade-in-up delay-3">
-                    <div class="feature-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                        </svg>
-                    </div>
-                    <h3>Front-end Hosting</h3>
-                    <p>Fully integrated. Fully automated. MACH-compliant. This is front-end hosting that works for you.</p>
-                    <a href="#" class="feature-link">Learn more →</a>
-                </div>
+            <div class="features-wrapper">
+                <button class="carousel-nav prev" id="carousel-prev" aria-label="Previous cards">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <div class="features-grid" id="features-grid"></div>
+                <button class="carousel-nav next" id="carousel-next" aria-label="Next cards">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
