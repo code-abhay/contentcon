@@ -190,8 +190,11 @@ window.renderBlogPosts = async function() {
         
         const delayClass = index > 0 ? `delay-${index}` : '';
         
+        // Store full post data for modal - escape properly
+        const postData = encodeURIComponent(JSON.stringify(post));
+        
         return `
-          <article class="blog-card fade-in-up ${delayClass}">
+          <article class="blog-card fade-in-up ${delayClass}" onclick="showBlogDetailsFromEncoded('${postData}')">
             <div class="blog-image">
               ${imageHTML}
               ${category ? `<span class="blog-category">${category}</span>` : ''}
@@ -199,7 +202,7 @@ window.renderBlogPosts = async function() {
             <div class="blog-content">
               <h3>${title}</h3>
               <p>${description}</p>
-              <a href="/blog/${slug}" class="blog-link">Read more →</a>
+              <a href="#" class="blog-link" onclick="event.stopPropagation(); showBlogDetailsFromEncoded('${postData}'); return false;">Read more →</a>
             </div>
           </article>
         `;

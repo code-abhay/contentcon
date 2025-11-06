@@ -6,6 +6,7 @@
     <title>ContentCon Blog - Modern Content Management</title>
     <meta name="description" content="Modern content management blog powered by Contentstack CMS">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -246,6 +247,26 @@
     <!-- Contentstack Sync Scripts -->
     <script src="contentstack-sync-browser.js"></script>
     <script src="contentstack-render-browser.js"></script>
+    <!-- Modal for Detail View -->
+    <div id="detail-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <span class="blog-category" id="modal-category"></span>
+                <h2 id="modal-title"></h2>
+                <div class="meta">
+                    <span id="modal-author"></span>
+                    <span id="modal-date"></span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <img id="modal-image" class="modal-image" src="" alt="" style="display: none;">
+                <p class="modal-description" id="modal-description"></p>
+                <div class="modal-content-full" id="modal-content-full"></div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
