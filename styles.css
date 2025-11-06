@@ -466,7 +466,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
     margin-top: 60px;
-    align-items: stretch;
+    align-items: start;
 }
 
 .feature-card {
@@ -479,7 +479,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    min-height: 350px;
+    min-height: 400px;
+    max-height: 600px;
 }
 
 .feature-card:hover {
@@ -519,6 +520,26 @@ body {
     margin-bottom: 24px;
     line-height: 1.7;
     flex: 1;
+    overflow-y: auto;
+    max-height: 200px;
+    padding-right: 8px;
+}
+
+.feature-card p::-webkit-scrollbar {
+    width: 4px;
+}
+
+.feature-card p::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.feature-card p::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+}
+
+.feature-card p::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light);
 }
 
 .feature-link {

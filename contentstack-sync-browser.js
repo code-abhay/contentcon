@@ -147,44 +147,71 @@ window.checkForUpdates = async function() {
   try {
     console.log('🔍 Checking for content updates...');
     
-    // Fetch fresh data without cache
+    // Fetch fresh data without cache for all content types
     const hero = await window.getHeroSection(true);
     
     if (!hero) {
       console.warn('⚠️ Could not fetch hero section for update check');
-      return false;
+      // Still check other content types
     }
     
-    // Use publish_details.time as most reliable indicator of published changes
-    // Also check _version and updated_at as fallbacks
-    const publishTime = hero.publish_details?.time || hero.updated_at || hero._version;
-    const contentHash = JSON.stringify({
-      title: hero.title,
-      subtitle: hero.subtitle,
-      gradient_title: hero.gradient_title,
-      time: publishTime
-    });
+    // Check ALL content types for changes, not just hero
+    // This ensures we catch updates in any content type
+    const contentTypes = ['hero_section', 'feature_card', 'blog_post', 'cta_section', 'footer_section', 'navigation_menu'];
+    let hasChanges = false;
     
-    const lastHash = lastUpdateTimes.get('hero_section');
+    for (const contentType of contentTypes) {
+      try {
+        let content = null;
+        
+        if (contentType === 'hero_section') {
+          content = hero;
+        } else if (contentType === 'feature_card') {
+          const features = await window.getFeatureCards(true);
+          content = features && features.length > 0 ? features[0] : null;
+        } else if (contentType === 'blog_post') {
+          const posts = await window.getBlogPosts(1, true);
+          content = posts && posts.length > 0 ? posts[0] : null;
+        }
+        
+        if (content) {
+          // Use publish_details.time as most reliable indicator
+          const publishTime = content.publish_details?.time || content.updated_at || content._version;
+          
+          // Create hash from key fields that change on publish
+          const contentHash = JSON.stringify({
+            uid: content.uid,
+            time: publishTime,
+            version: content._version,
+            title: content.title || content.menu_label || content.section_title || '',
+            updated: content.updated_at
+          });
+          
+          const lastHash = lastUpdateTimes.get(contentType);
+          
+          if (lastHash && lastHash !== contentHash) {
+            console.log(`🔄 ✅ Changes detected in ${contentType}!`);
+            console.log(`🔄 Previous: ${lastHash.substring(0, 50)}...`);
+            console.log(`🔄 Current: ${contentHash.substring(0, 50)}...`);
+            hasChanges = true;
+            lastUpdateTimes.set(contentType, contentHash);
+          } else if (!lastHash) {
+            // First time - store current hash
+            lastUpdateTimes.set(contentType, contentHash);
+            console.log(`💾 Stored initial hash for ${contentType}`);
+          }
+        }
+      } catch (error) {
+        console.warn(`⚠️ Could not check ${contentType} for updates:`, error);
+      }
+    }
     
-    console.log('📊 Hero update check:', { 
-      title: hero.title,
-      publishTime: publishTime,
-      currentHash: contentHash.substring(0, 50) + '...'
-    });
-    
-    if (lastHash && lastHash !== contentHash) {
+    if (hasChanges) {
       console.log('🔄 ✅ Content updated in Contentstack! Changes detected!');
-      console.log('🔄 Previous:', lastHash.substring(0, 50) + '...');
-      console.log('🔄 Current:', contentHash.substring(0, 50) + '...');
       console.log('🔄 Clearing cache and refreshing page...');
       
       // Clear all cache
       contentCache.clear();
-      lastUpdateTimes.clear();
-      
-      // Update hash
-      lastUpdateTimes.set('hero_section', contentHash);
       
       // Small delay then reload to show new content
       setTimeout(() => {
@@ -192,10 +219,6 @@ window.checkForUpdates = async function() {
       }, 1000);
       
       return true;
-    } else if (!lastHash) {
-      // First time - store current hash
-      lastUpdateTimes.set('hero_section', contentHash);
-      console.log('💾 Stored initial content hash');
     } else {
       console.log('✅ No changes detected - content is up to date');
     }
