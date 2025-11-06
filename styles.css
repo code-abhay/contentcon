@@ -41,6 +41,8 @@ body {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 24px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* ============================================
@@ -467,6 +469,8 @@ body {
     gap: 32px;
     margin-top: 60px;
     align-items: start;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .feature-card {
@@ -478,9 +482,11 @@ body {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    height: 100%;
     min-height: 400px;
     max-height: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .feature-card:hover {
@@ -513,6 +519,8 @@ body {
     font-weight: 700;
     margin-bottom: 16px;
     color: var(--text-primary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .feature-card p {
@@ -523,6 +531,8 @@ body {
     overflow-y: auto;
     max-height: 200px;
     padding-right: 8px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .feature-card p::-webkit-scrollbar {
