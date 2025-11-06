@@ -441,6 +441,9 @@ body {
 .features {
     padding: 100px 24px;
     background: var(--bg-primary);
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .section-header {
