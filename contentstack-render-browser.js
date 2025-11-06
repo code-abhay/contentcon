@@ -191,10 +191,13 @@ window.renderFeatureCards = async function() {
  */
 window.renderBlogPosts = async function() {
   try {
-    const posts = await window.getBlogPosts(3);
-    const blogGrid = document.querySelector('.blog-grid');
+    const posts = await window.getBlogPosts(100); // Get all posts for carousel
+    const blogGrid = document.getElementById('blog-grid') || document.querySelector('.blog-grid');
     
-    if (blogGrid && posts && posts.length > 0) {
+    console.log('🎨 Rendering blog posts:', posts?.length || 0, 'posts found');
+    
+    if (blogGrid) {
+      if (posts && posts.length > 0) {
       const postsHTML = posts.map((post, index) => {
         const title = post.title || '';
         const description = post.description || '';
@@ -225,9 +228,23 @@ window.renderBlogPosts = async function() {
         `;
       }).join('');
       blogGrid.innerHTML = postsHTML;
+      
+      // Re-initialize blog carousel after content is rendered
+      if (window.initBlogCarousel) {
+        setTimeout(() => {
+          window.initBlogCarousel();
+        }, 100);
+      }
+      } else {
+        console.warn('⚠️ No blog posts found in Contentstack');
+        blogGrid.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 40px;">No blog posts available</p>';
+      }
+    } else {
+      console.error('❌ Blog grid element not found in DOM');
     }
   } catch (error) {
-    console.error('Error rendering blog posts:', error);
+    console.error('❌ Error rendering blog posts:', error);
+    console.error('Stack trace:', error.stack);
   }
 };
 
