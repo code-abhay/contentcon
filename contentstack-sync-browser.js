@@ -26,7 +26,7 @@ let contentCache = window.contentCache;
 let lastUpdateTimes = new Map();
 
 // Auto-refresh settings
-const AUTO_REFRESH_ENABLED = true;
+const AUTO_REFRESH_ENABLED = false; // Disabled - use window.forceRefresh() or window.checkForUpdates() manually
 const REFRESH_INTERVAL = 5000; // 5 seconds (faster sync for better responsiveness)
 
 /**
